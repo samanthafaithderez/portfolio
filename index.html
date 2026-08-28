@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samantha Faith M. Derez | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0914;
+            color: #f1eaf5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: rgba(11, 9, 20, 0.85);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #ff6b9d;
+        }
+
+        nav a {
+            color: #d1c7bd;
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #ff6b9d;
+        }
+
+        .btn-contact {
+            background: #ff6b9d;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-contact:hover {
+            background: #f05286;
+            transform: translateY(-1px);
+        }
+
+        /* Layout Structure */
+        section {
+            min-height: auto;
+            padding: 120px 8% 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ff6b9d;
+            letter-spacing: -0.5px;
+        }
+
+        /* Intro / Landing Section */
+        #home {
+            min-height: 100vh;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .intro-text {
+            max-width: 680px;
+        }
+
+        .intro-text h1 {
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .intro-text h1 span {
+            color: #ff6b9d;
+        }
+
+        .intro-text h2 {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: #c084fc;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        .intro-text p {
+            color: #b0a8b9;
+            margin-bottom: 34px;
+            font-size: 1.15rem;
+            max-width: 540px;
+        }
+
+        .intro-btns {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-pri {
+            background: #ff6b9d;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .btn-pri:hover {
+            background: #f05286;
+        }
+
+        .btn-sec {
+            border: 1px solid rgba(255, 107, 157, 0.4);
+            color: #ff6b9d;
+            padding: 12px 28px;
+            border-radius: 30px;
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-sec:hover {
+            background: rgba(255, 107, 157, 0.08);
+            border-color: #ff6b9d;
+        }
+
+        .intro-image {
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 4 / 5;
+            border-radius: 200px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 107, 157, 0.5);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            flex-shrink: 0;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* About Section */
+        #about {
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .about-container {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 48px;
+            border-radius: 16px;
+            max-width: 720px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        .about-container p {
+            color: #b0a8b9;
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        .about-container p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Outputs Section */
+        #outputs {
+            justify-content: flex-start;
+            padding-top: 130px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #d1c7bd;
+            padding: 10px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: #ff6b9d;
+            color: #ffffff;
+            border-color: #ff6b9d;
+        }
+
+        .tab-content {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .tab-content.active {
+            display: grid;
+        }
+
+        .output-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 24px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .output-box:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 107, 157, 0.4);
+        }
+
+        .output-box h3 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .click-hint {
+            font-size: 0.8rem;
+            color: #ff6b9d;
+            display: block;
+        }
+
+        /* Side-by-side Image Container */
+        .img-container {
+            display: none;
+            margin-top: 16px;
+            gap: 12px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .output-box.show-image .img-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .output-img-preview {
+            flex: 1 1 calc(50% - 6px);
+            max-width: 100%;
+            height: auto;
+            max-height: 350px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        /* Contact Section */
+        #contact {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .contact-item a {
+            color: #ff6b9d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+            word-break: break-word;
+        }
+
+        .contact-item a:hover {
+            color: #f05286;
+            text-decoration: underline;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                gap: 12px;
+                justify-content: center;
+                padding: 16px 5%;
+            }
+
+            nav {
+                display: flex;
+                gap: 16px;
+            }
+
+            nav a {
+                margin-left: 0;
+                font-size: 1rem;
+            }
+
+            .btn-contact {
+                display: none;
+            }
+
+            section {
+                padding: 100px 5% 40px;
+            }
+
+            #home {
+                min-height: auto;
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 32px;
+                padding-top: 130px;
+            }
+
+            .intro-image {
+                max-width: 280px;
+            }
+
+            .intro-btns {
+                justify-content: center;
+            }
+
+            .about-container {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .intro-btns {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-pri, .btn-sec {
+                width: 100%;
+                text-align: center;
+            }
+
+            .tab-buttons {
+                width: 100%;
+            }
+
+            .tab-btn {
+                flex: 1 1 100%;
+            }
+
+            .output-img-preview {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">My <span>Portfolio</span></div>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#outputs">Outputs</a>
+        </nav>
+        <a href="#contact" class="btn-contact">Contact Me</a>
+    </header>
+
+    <!-- Landing / Home -->
+    <section id="home">
+        <div class="intro-text">
+            <h1>Hi, it's <span>Samantha Faith M. Derez</span></h1>
+            <h2>Student from Cavite State University - Silang Campus</h2>
+            <p>Welcome to my digital space! Here you'll find my academic achievements, laboratory projects, and coursework outputs.</p>
+            <div class="intro-btns">
+                <a href="#outputs" class="btn-pri">View Projects</a>
+                <a href="#contact" class="btn-sec">Get in Touch</a>
+            </div>
+        </div>
+        <div class="intro-image">
+            <img src="sampicture.jpg" alt="Samantha Faith M. Derez">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <p>I am a 3rd year BS Computer Science student focused on front-end web development. I love turning concepts into interactive, user-friendly, and fully responsive websites.</p>
+            <p>Through my academic coursework, I am consistently expanding my skills in different languages and modern software development practices. I enjoy building user-friendly layouts and experimenting with creative design themes.</p>
+        </div>
+    </section>
+
+    <!-- Academic Outputs -->
+    <section id="outputs">
+        <h2 class="section-title">My Outputs</h2>
+        
+        <!-- Filter Tabs -->
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab(event, 'assignments')">Assignments</button>
+            <button class="tab-btn" onclick="switchTab(event, 'labs')">Laboratories</button>
+            <button class="tab-btn" onclick="switchTab(event, 'quizzes')">Quizzes</button>
+        </div>
+
+        <!-- Tab 1: Assignments -->
+        <div id="assignments" class="tab-content active">
+            <div class="output-box" onclick="toggleImage(this)">
+                <h3>Assignment 1</h3>
+                <span class="click-hint">Click to view/hide image</span>
+                <div class="img-container">
+                    <img src="assignment1.jpg" alt="Assignment 1" class="output-img-preview">
+                </div>
+            </div>
+            <div class="output-box" onclick="toggleImage(this)">
+                <h3>Assignment 2</h3>
+                <span class="click-hint">Click to view/hide image</span>
+                <div class="img-container">
+                    <img src="assignment2.jpg" alt="Assignment 2" class="output-img-preview">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Laboratories -->
+        <div id="labs" class="tab-content">
+            <div class="output-box" onclick="toggleImage(this)">
+                <h3>Laboratory 1</h3>
+                <span class="click-hint">Click to view/hide image</span>
+                <div class="img-container">
+                    <img src="lab1.jpg" alt="Laboratory 1" class="output-img-preview">
+                </div>
+            </div>
+            <div class="output-box" onclick="toggleImage(this)">
+                <h3>Laboratory 2</h3>
+                <span class="click-hint">Click to view/hide image</span>
+                <div class="img-container">
+                    <img src="lab2.jpg" alt="Laboratory 2" class="output-img-preview">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Quizzes -->
+        <div id="quizzes" class="tab-content">
+            <div class="output-box" onclick="toggleImage(this)">
+                <h3>Quiz 1</h3>
+                <span class="click-hint">Click to view/hide images</span>
+                <div class="img-container">
+                    <img src="quiz1.jpg" alt="Quiz 1 Image 1" class="output-img-preview">
+                    <img src="quiz1(2).jpg" alt="Quiz 1 Image 2" class="output-img-preview">
+                </div>
+            </div>
+            <div class="output-box" onclick="toggleImage(this)">
+                <h3>Quiz 2</h3>
+                <span class="click-hint">Click to view/hide image</span>
+                <div class="img-container">
+                    <img src="quiz2.jpg" alt="Quiz 2 Image" class="output-img-preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="about-container" style="text-align: center;">
+            <p>Feel free to reach out to me for collaborations, inquiries, or just to say hello!</p>
+            <div class="contact-info">
+                <p class="contact-item"><strong>Email:</strong> <a href="mailto:samanthafaith.derez@cvsu.edu.ph">samanthafaith.derez@cvsu.edu.ph</a></p>
+                <p class="contact-item"><strong>Phone:</strong> <a href="tel:+639325702365">+63 932 570 2365</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Toggle Script -->
+    <script>
+        function toggleImage(box) {
+            box.classList.toggle('show-image');
+        }
+    </script>
+
+    <!-- Tab Switching Script -->
+    <script>
+        function switchTab(event, categoryId) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(categoryId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+    <!-- Navigation Scroll & Click Active Link Script -->
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
