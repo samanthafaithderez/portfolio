@@ -455,41 +455,26 @@
             <button class="tab-btn active" onclick="switchTab(event, 'assignments')">Assignments</button>
             <button class="tab-btn" onclick="switchTab(event, 'labs')">Laboratories</button>
             <button class="tab-btn" onclick="switchTab(event, 'quizzes')">Quizzes</button>
+            <button class="tab-btn" onclick="switchTab(event, 'exams')">Exams</button>
         </div>
 
         <!-- Tab 1: Assignments -->
         <div id="assignments" class="tab-content active">
-            <div class="output-box" onclick="toggleImage(this)">
+            <div class="output-box">
                 <h3>Assignment 1</h3>
-                <span class="click-hint">Click to view/hide image</span>
-                <div class="img-container">
-                    <img src="assignment1.jpg" alt="Assignment 1" class="output-img-preview">
-                </div>
             </div>
-            <div class="output-box" onclick="toggleImage(this)">
+            <div class="output-box">
                 <h3>Assignment 2</h3>
-                <span class="click-hint">Click to view/hide image</span>
-                <div class="img-container">
-                    <img src="assignment2.jpg" alt="Assignment 2" class="output-img-preview">
-                </div>
             </div>
         </div>
 
         <!-- Tab 2: Laboratories -->
         <div id="labs" class="tab-content">
-            <div class="output-box" onclick="toggleImage(this)">
+            <div class="output-box">
                 <h3>Laboratory 1</h3>
-                <span class="click-hint">Click to view/hide image</span>
-                <div class="img-container">
-                    <img src="lab1.jpg" alt="Laboratory 1" class="output-img-preview">
-                </div>
             </div>
-            <div class="output-box" onclick="toggleImage(this)">
+            <div class="output-box">
                 <h3>Laboratory 2</h3>
-                <span class="click-hint">Click to view/hide image</span>
-                <div class="img-container">
-                    <img src="lab2.jpg" alt="Laboratory 2" class="output-img-preview">
-                </div>
             </div>
         </div>
 
@@ -503,11 +488,15 @@
                     <img src="quiz1(2).jpg" alt="Quiz 1 Image 2" class="output-img-preview">
                 </div>
             </div>
+        </div>
+
+        <!-- Tab 4: Exams -->
+        <div id="exams" class="tab-content">
             <div class="output-box" onclick="toggleImage(this)">
-                <h3>Quiz 2</h3>
+                <h3>Exam 1</h3>
                 <span class="click-hint">Click to view/hide image</span>
                 <div class="img-container">
-                    <img src="quiz2.jpg" alt="Quiz 2 Image" class="output-img-preview">
+                    <img src="exam1.jpg" alt="Exam 1 Score" class="output-img-preview">
                 </div>
             </div>
         </div>
